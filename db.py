@@ -1,7 +1,7 @@
 import bcrypt
 import psycopg2
 from models import UserRole, UserStatus
-
+from utils import register_user_bcrypt
 db_params = {
     'database': 'postgres',
     'user': 'postgres',
@@ -72,8 +72,7 @@ def commit(func):
 if __name__ == '__main__':
     init()
 
-    from utils import register_user_bcrypt  # Import moved inside the if __name__ == '__main__' block
-
+ 
     username = 'Avf'
     password = '2209'
     role = 'user'
